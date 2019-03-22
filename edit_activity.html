@@ -44,7 +44,9 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
 
     <!--File Input-->
-    <link rel="stylesheet" href="assets/css/filepond.css">
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
+        rel="stylesheet">
 
     <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 
@@ -94,6 +96,8 @@
                 <!-- Start Atribute Navigation -->
                 <div class="attr-nav">
                     <ul>
+                        <li class=""><a><button class="btn-sign-out"><i class="fa fa-sign-out"
+                                        aria-hidden="true">登出</i></button></a></li>
                         <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                     </ul>
                 </div>
@@ -112,13 +116,13 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse bg-drak" id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li><a href="index.html">首頁</a></li>
-                        <li><a href="local-history.html">地方志</a></li>
-                        <li><a href="temple.html">王爺廟</a></li>
-                        <li><a href="ship.html">王船</a></li>
-                        <li><a href="diet.html">飲食</a></li>
-                        <li><a href="cold-Temple.html">陰廟</a></li>
-                        <li><a href="upload-list.html">上傳檔案</a></li>
+                        <li><a href="list_works.html">作品/文物</a></li>
+                        <li><a href="list_video.html">影音資料</a></li>
+                        <li><a href="list_organization.html">組織</a></li>
+                        <li><a href="list_space.html">空間</a></li>
+                        <li><a href="list_people.html">人物</a></li>
+                        <li><a href="list_activity.html">活動</a></li>
+                        <li><a href="upload-list.html">上傳檔案列表</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div>
@@ -141,15 +145,17 @@
                 <div class="row">
                     <div class="main_testimonial">
                         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                            <form name="sentMessage" id="" novalidate>
+                            <form action="api/submit.php" method="post" enctype="multipart/form-data" name="sentMessage"
+                                id="" novalidate>
                                 <div class="col-sm-10 col-sm-offset-1">
                                     <h2>上傳活動資料</h2>
 
-                                    <div class="control-group form-group">
+                                    <!-- <div class="control-group form-group">
                                         <div class="controls">
-                                            <input type="file" class="filepond">
+                                            <input type="file" class="my-pond" name="filepond" multiple />
+
                                         </div>
-                                    </div>
+                                    </div> -->
 
                                     <div class="control-group form-group">
                                         <div class="controls">
@@ -159,7 +165,7 @@
                                             <p class="help-block"></p>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="control-group form-group">
                                         <div class="controls">
                                             <label>圖片權利註記:</label>
@@ -206,13 +212,13 @@
                                     </div>
 
                                     <div class="control-group form-group">
-                                            <div class="controls">
-                                                <label>結束日期:</label>
-                                                <input type="date" class="form-control" id="" required=""
-                                                    data-validation-required-message="請輸入發表時間">
-                                                <div class="help-block"></div>
-                                            </div>
+                                        <div class="controls">
+                                            <label>結束日期:</label>
+                                            <input type="date" class="form-control" id="" required=""
+                                                data-validation-required-message="請輸入發表時間">
+                                            <div class="help-block"></div>
                                         </div>
+                                    </div>
 
                                     <div class="control-group form-group">
                                         <div class="controls">
@@ -223,9 +229,8 @@
                                     <div class="control-group form-group">
                                         <div class="controls">
                                             <label>活動/事件介紹描述資料:</label>
-                                            <textarea class="form-control" id=""
-                                                placeholder=""></textarea>
-                                                <span class="help-block">請輸入文章內容，300~500字/科普化</span>
+                                            <textarea class="form-control" id="" placeholder=""></textarea>
+                                            <span class="help-block">請輸入文章內容，300~500字/科普化</span>
                                         </div>
                                     </div>
                                     <div class="control-group form-group">
@@ -314,7 +319,23 @@
 
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/jquery.tx3-tag-cloud.js"></script>
-    <script src="assets/js/filepond.js"></script>
+
+    <script
+        src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
+
+    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+    <!-- include FilePond library -->
+    <script src="https://unpkg.com/filepond/dist/filepond.min.js"></script>
+
+    <!-- include FilePond plugins -->
+    <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.js"></script>
+
+
+    <!-- include FilePond jQuery adapter -->
+    <script src="https://unpkg.com/jquery-filepond/filepond.jquery.js"></script>
+
+    <!-- include FilePond jQuery adapter -->
+    <!-- script src="assets/js/filepond.jquery.js"></script -->
     <script src="assets/js/main.js"></script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0YHjxhTqUPSIQtCRRLPsKmYZ8NUmiX00&callback=initMap">
@@ -325,20 +346,71 @@
 
     <script src="assets/js/PHmain.js"></script>
     <script>
-            tinymce.init({
-                selector: "textarea", // 目標物件
-                menubar: false,
-                toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | link image',
-                theme: 'silver',
-                plugins: "advlist autolink link image lists charmap print preview", // 套件設定: 進階清單、自動連結、連結、上傳圖片、清單、特殊字元表、列印、預覽
-                mobile: { // 行動裝置設定
-                    theme: "mobile", // 模板風格
-                    plugins: ["autosave", "lists", "autolink"],  // 套件設定: 自動儲存、清單、自動連結
-                    toolbar: ["undo", "bold", "italic", "styleselect"]
-                }
+        tinymce.init({
+            selector: "textarea", // 目標物件
+            menubar: false,
+            toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | link image',
+            theme: 'silver',
+            plugins: "advlist autolink link image lists charmap print preview", // 套件設定: 進階清單、自動連結、連結、上傳圖片、清單、特殊字元表、列印、預覽
+            mobile: { // 行動裝置設定
+                theme: "mobile", // 模板風格
+                plugins: ["autosave", "lists", "autolink"],  // 套件設定: 自動儲存、清單、自動連結
+                toolbar: ["undo", "bold", "italic", "styleselect"]
+            }
+        });
+
+        $(function () {
+
+            // First register any plugins
+            $.fn.filepond.registerPlugin(FilePondPluginImagePreview);
+
+            // Turn input element into a pond
+            $('.my-pond').filepond({
+                allowMultiple: true,            //允許多檔上傳
+                server: './file',
+
+
+                labelIdle: '<span class="filepond--label-action">拖曳您的檔案或點擊以進行上傳</span>',
+                labelFileProcessing: '上傳中...',
+                labelFileProcessingComplete: '上傳完畢',
+                labelFileProcessingAborted: '已取消上傳',
+                labelFileProcessingError: '上傳時發生錯誤',
+                labelTapToCancel: '點擊即可取消',
+                labelTapToRetry: '點擊即可重試',
+                labelTapToUndo: '點擊即可放棄檔案',
+                labelButtonRemoveItem: '移除',
+                labelButtonAbortItemLoad: '退出',
+                labelButtonRetryItemLoad: '重試',
+                labelButtonAbortItemProcessing: '取消',
+                labelButtonUndoItemProcessing: '放棄',
+                labelButtonRetryItemProcessing: '重試',
+                labelButtonProcessItem: '上傳',
+                allowFileTypeValidation: true,
+                labelFileTypeNotAllowed: '錯誤的檔案類型',
+                
+                
             });
-        FilePond.parse(document.body);
-        </script>
+            FilePond.create(document.querySelector('input'), {
+                acceptedFileTypes: [
+                    'image/png',
+                    'application/pdf'
+                ],
+                fileValidateTypeDetectType: (source, type) => new Promise((resolve, reject) => {
+                    console.log(source, type);
+                    // do custom type detection here and return with promise
+                    resolve(type);
+                })
+            });
+            // Listen for addfile event
+            $('.my-pond').on('FilePond:addfile', function (e) {
+
+                console.log('file added event', e);
+
+            });
+
+        });
+
+    </script>
 </body>
 
 </html>

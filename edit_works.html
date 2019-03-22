@@ -94,6 +94,8 @@
                 <!-- Start Atribute Navigation -->
                 <div class="attr-nav">
                     <ul>
+                        <li class=""><a><button class="btn-sign-out"><i class="fa fa-sign-out"
+                                        aria-hidden="true">登出</i></button></a></li>
                         <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                     </ul>
                 </div>
@@ -112,13 +114,13 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse bg-drak" id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li><a href="index.html">首頁</a></li>
-                        <li><a href="local-history.html">地方志</a></li>
-                        <li><a href="temple.html">王爺廟</a></li>
-                        <li><a href="ship.html">王船</a></li>
-                        <li><a href="diet.html">飲食</a></li>
-                        <li><a href="cold-Temple.html">陰廟</a></li>
-                        <li><a href="upload-list.html">上傳檔案</a></li>
+                        <li><a href="list_works.html">作品/文物</a></li>
+                        <li><a href="list_video.html">影音資料</a></li>
+                        <li><a href="list_organization.html">組織</a></li>
+                        <li><a href="list_space.html">空間</a></li>
+                        <li><a href="list_people.html">人物</a></li>
+                        <li><a href="list_activity.html">活動</a></li>
+                        <li><a href="upload-list.html">上傳檔案列表</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div>
@@ -145,14 +147,14 @@
                                 <div class="col-sm-10 col-sm-offset-1">
                                     <h2>上傳作品文物資料</h2>
 
-                                    <div class="row" style="height: auto">
+                                    <!-- <div class="row" style="height: auto">
                                         <label>文件封面:</label>
                                         <input type="file" class="filepond">
                                     </div>
                                     <div class="row" style="height: auto">
                                         <label>作品/文物:</label>
                                         <input type="file" class="filepond">
-                                    </div>
+                                    </div> -->
                                     <div class="control-group form-group">
                                         <div class="controls">
                                             <label>名稱:</label>
@@ -169,7 +171,38 @@
                                             <p class="help-block"></p>
                                         </div>
                                     </div>
+                                    <div class="control-group form-group">
+                                        <div class="controls">
+                                            <label>媒體類型:</label>
+                                            <select name="" class="form-control-dropdown form-control">
+                                                <option value="video">圖書手冊</option>
+                                                <option value="redio">照片</option>  
+                                                <option value="newspaper">報紙</option>  
+                                                <option value="write">手稿/手抄本</option>  
+                                                <option value="img">圖稿</option>  
+                                                <option value="doc">文件</option>  
+                                                <option value="card">卡片</option>  
+                                                <option value="poster">海報</option>  
+                                                <option value="menu">節目單/節目冊/DM</option>  
+                                                <option value="music">樂譜/曲譜</option>  
+                                                <option value="script">劇本</option>  
+                                                <option value="video">影音資料</option>  
+                                                <option value="sound">錄音帶</option>  
+                                                <option value="movie">錄影帶</option>  
+                                                <option value="cd">光碟片</option>  
+                                                <option value="mSheet">磁片</option>  
+                                                <option value="microfilm">微縮捲片</option>  
+                                                <option value="vRecords">黑膠唱片/蟲膠唱片</option>  
+                                                <option value="usb">硬碟/隨身碟/記憶卡</option>  
+                                                <option value="nfilm">底片</option>  
+                                                <option value="tCultural">有形文物</option>  
+                                                <option value="others">其他</option>  
 
+                                            </select>
+
+                                            <div class="help-block"></div>
+                                        </div>
+                                    </div>
                                     <div class="control-group form-group">
                                         <div class="controls">
                                             <label>圖片權利註記:</label>
@@ -253,10 +286,9 @@
                                     <div class="control-group form-group">
                                         <div class="controls">
                                             <label>作品/文物介紹描述資料:</label>
-                                            <textarea class="form-control" id=""
-                                                placeholder=""></textarea>
-                                                <span class="help-block">請輸入文章內容，300~500字/科普化</span>
-                                            </div>
+                                            <textarea class="form-control" id="" placeholder=""></textarea>
+                                            <span class="help-block">請輸入文章內容，300~500字/科普化</span>
+                                        </div>
                                     </div>
                                     <div class="control-group form-group">
                                         <div class="controls">

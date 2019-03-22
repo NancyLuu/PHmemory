@@ -163,6 +163,17 @@
       .btn-secondary {
           margin: 2px 2px;
       }
+      .btn-sign-out {
+        border-radius: 3px;
+        margin: -10px 0;
+        background-color: #fff;
+      }
+      .btn-sign-out:hover {
+        background-color: rgb(235, 235, 235);
+      }
+      .btn-sign-out:hover {
+        background-color: #BDBDBD;
+      }
       .main-textarea{
         display: block;
         width: 100%;
