@@ -209,7 +209,7 @@
         text: #bbbbbb;
     }
     .btn:hover {
-        background-color: #3c763d;
+        /* background-color: #dadada; */
         
     }
     .dropdown-item {
@@ -252,6 +252,13 @@
 
       .right {
             text-align: right;
+      }
+      li.list {
+        padding: 0px 50px;
+      }
+
+      .groupList01, .groupList02, .groupList03 {
+        display: none;
       }
 
       @media screen and (-webkit-min-device-pixel-ratio: 0) {

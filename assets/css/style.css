@@ -156,7 +156,6 @@ a {
 .btn:focus,
 .btn:active {
     outline: inherit;
-    background-color: forestgreen;
 }
 *,
 *:before,
@@ -395,7 +394,7 @@ Button
 }
 
 .btn:hover{
-    color:#fff;
+    /* color:#fff; */
     /*border:1px solid;*/
 }
 
