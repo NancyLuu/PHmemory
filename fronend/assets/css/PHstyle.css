@@ -261,6 +261,18 @@
         display: none;
       }
 
+      .img-sortable {
+        position: absolute;
+        left: auto; 
+        top: 0px;
+        height: 200px;
+        width: auto;
+      }
+      .img-sortable:hover {
+        width: 100%;
+        height: auto;
+      }
+
       @media screen and (-webkit-min-device-pixel-ratio: 0) {
         input[type="date"].form-control-dropdown,
         input[type="time"].form-control-dropdown,
